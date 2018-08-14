@@ -1,0 +1,13 @@
+<h1>TASKS</h1>
+
+<ul>
+  <%@tasks.each do |task| %>
+    <li>
+      <%= task.completed == true ? (fa_icon 'check-square-o') : (fa_icon 'square-o')%>
+      <%=link_to task.title, task_path(task.id) %>|
+      <%= link_to 'Edit', task_edit_path(task.id) %>|
+    </li>
+  <%end%>
+</ul>
+<%=fa_icon 'plus'%> <%= link_to 'Add a new task', tasks_new_path %>
+

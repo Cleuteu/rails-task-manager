@@ -1,0 +1,6 @@
+<h1><%= @task.title %></h1>
+<%= @task.details %>
+<p>
+  Completed : <%= @task.completed %>
+  <%= link_to 'Delete', task_path(@task.id), method: "DELETE" %>
+</p>
